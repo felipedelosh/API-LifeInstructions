@@ -1,6 +1,6 @@
 <h1 align="center"> FelipedelosH </h1>
 <br>
-<h4>Name of project</h4>
+<h4>LifeInstructions API</h4>
 
 ![Banner](docs/banner.png)
 :construction: Status of project :construction:

@@ -1,0 +1,4 @@
+GET http://localhost:5000/health
+
+
+POST http://localhost:5000/register_player

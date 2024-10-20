@@ -1,0 +1,22 @@
+1 -> Todas las respuestas del API tienen que seguir el siguienten estandar:
+
+{
+    "status": true | false,
+    "data": [
+        
+    ],
+    "code": 200 | 400 | 401 | 404 | 500
+}
+
+2 -> Todos los objetos van a tener el siguiente método para el Json:
+
+    def get_json(self):
+        return self.__dict__
+
+
+3 -> Todos los objetos van a tener el siguiente método para imprimir:
+
+    def __repr__(self):
+        attributes = ', '.join(f'{key}={value}' for key, value in self.__dict__.items())
+        return f'Player({attributes})'
+

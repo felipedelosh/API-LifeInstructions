@@ -1,0 +1,29 @@
+{
+    "lugares": [
+        "Casa",
+        "Iglesia",
+        "Parque",
+        "Playa",
+        "Auto",
+        "Oficina",
+        "Escuela",
+        "Hospital",
+        "Restaurante",
+        "Biblioteca",
+        "Gimnasio",
+        "Cine",
+        "Centro comercial",
+        "Montaña",
+        "Bosque",
+        "Río",
+        "Lago",
+        "Aeropuerto",
+        "Estación de tren",
+        "Estadio",
+        "Museo",
+        "Teatro",
+        "Hotel",
+        "Bar",
+        "Discoteca"
+    ]
+}

@@ -1,0 +1,24 @@
+lifeInstructions/
+│
+├── app/
+│   ├── __init__.py            # INIT app Flask
+│   ├── routes.py              # API ROUTES (END-POINTS)
+│   ├── controllers/           # CONTROLLERS
+│   │   └── ...
+│   │   
+│   ├── services/              # Services
+│   │   └── ...
+│   │     
+│   ├── repositories/          # Repository (DB Access)
+│   │   └── ...
+│   │   
+│   ├── models/                # Models DB
+│   │   └── ...
+│   │           
+│   ├── use_cases/             # Use cases
+│   │   └── ...
+│        
+│
+├── config.py                  
+├── run.py                     # Main to run the server
+└── requirements.txt           # To install dependencies

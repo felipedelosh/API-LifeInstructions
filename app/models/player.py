@@ -1,9 +1,13 @@
 # app/models/player.py
 class Player:
-    def __init__(self, id, name, age):
+    def __init__(self, id):
         self.id = id
-        self.name = name
-        self.age = age
+        self.firt_name = ""
+        self.middle_name = ""
+        self.last_name = ""
+        self.second_last_name = ""
+        self.sex = ""
+        self.age = 0
         self.location = ""
 
     def get_json(self):

@@ -6,7 +6,7 @@ class PlayerService:
     def __init__(self, repository: PlayerRepository):
         self.repository = repository
 
-    def register_player(self, name, age):
-        new_player = Player(id=len(self.repository.get_all()) + 1, name=name, age=age)
+    def register_player(self):
+        new_player = Player(id=len(self.repository.get_all()) + 1)
         self.repository.add(new_player)
         return new_player

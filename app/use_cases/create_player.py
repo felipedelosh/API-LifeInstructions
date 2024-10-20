@@ -5,5 +5,5 @@ class CreatePlayer:
     def __init__(self, player_service: PlayerService):
         self.player_service = player_service
     
-    def execute(self, name, age):
-        return self.player_service.register_player(name, age)
+    def execute(self):
+        return self.player_service.register_player()

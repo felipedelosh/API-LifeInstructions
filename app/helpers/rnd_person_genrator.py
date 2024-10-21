@@ -1,28 +1,36 @@
 # app/helpers/rnd_person_genrator.py
+from app.models.person import Person
+from app.helpers.get_male_names import get_male_names
+from app.helpers.get_female_names import get_female_names
 import random
 
-class RandomPersonGenerator:
-    def __init__(self):
-        self.first_name = self.generar_nombre()
-        self.middle_name = self.generar_nombre()
-        self.last_name = self.generar_apellido()
-        self.second_last_name = self.generar_apellido()
-        self.age = self.generar_edad()
-        self.gender = self.generar_genero()
+def _get_rnd_male_single_name(lang):
+    return random.choice(get_male_names(lang))
 
-    def generar_nombre(self):
-        nombres = ["Felipe", "Juan", "Carlos", "Andrés", "David", "Jorge", "Ricardo", "Mateo", "Santiago", "Alejandro"]
-        return random.choice(nombres)
+def _get_rnd_female_single_name(lang):
+    return random.choice(get_female_names(lang))
 
-    def generar_apellido(self):
-        apellidos = ["Rodríguez", "Gómez", "López", "González", "García", "Martínez", "Ramírez", "Sánchez", "Hernández", "Díaz"]
-        return random.choice(apellidos)
 
-    def generar_edad(self):
-        return random.randint(0, 100)
+def rnd_person_genrator(sex="", lang="ES"):
+    rndPerson = Person(777)
 
-    def generar_genero(self):
-        return random.choice(['Masculino', 'Femenino'])
+    # 50-50 sex
+    if sex == "":
+        _isMale = True if random.randint(0, 1) == 1 else False
+        if _isMale:
+            rndPerson.sex = "MALE"
+        else:
+            rndPerson.sex = "FEMALE"
+    else:
+        rndPerson.sex = sex
+    
+    # 40% of person HAV single name
+    _isSingleName = False if random.randint(0, 100) <= 40 else True
 
-    def __repr__(self):
-        return f"{self.first_name} {self.middle_name} {self.last_name} {self.second_last_name}, Edad: {self.age}, Género: {self.gender}"
+    if _isSingleName:
+        if rndPerson.sex == "MALE":
+            rndPerson.first_name = _get_rnd_male_single_name(lang)
+        else:
+            rndPerson.first_name = _get_rnd_female_single_name(lang)
+
+    return rndPerson

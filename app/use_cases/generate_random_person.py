@@ -1,10 +1,7 @@
 # app/use_cases/generate_random_person.py
-from app.helpers.rnd_person_genrator import RandomPersonGenerator
+from app.helpers.rnd_person_genrator import rnd_person_genrator
 
 class GenerateRandomPerson:
-    def __init__(self):
-        pass
-
     def execute(self):
-        rndP = RandomPersonGenerator()
+        rndP = rnd_person_genrator()
         return rndP

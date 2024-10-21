@@ -8,6 +8,6 @@ use_case = GenerateRandomPerson()
 def get_random_person():
     try:
         rnd_person = use_case.execute()
-        return create_response(True, rnd_person, 200)
+        return create_response(True, rnd_person.get_json(), 200)
     except:
         return create_response(False, "", 500)

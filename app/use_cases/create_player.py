@@ -8,10 +8,13 @@ class CreatePlayer:
         self.person_service = person_service
 
     def execute(self, lang):
-        father = rnd_person_genrator(sex="MALE", isParent=True).id
-        mother = rnd_person_genrator(sex="FEMALE", isParent=True).id
+        _newPId = self.person_service.generate_new_id()
+        father = rnd_person_genrator(_newPId, sex="MALE", isParent=True).id
+        _newPId = self.person_service.generate_new_id()
+        mother = rnd_person_genrator(_newPId, sex="FEMALE", isParent=True).id
 
-        player = map_person_to_player(rnd_person_genrator(age=0))
+        _newPId = self.person_service.generate_new_id()
+        player = map_person_to_player(rnd_person_genrator(_newPId, age=0))
         player.father = father
         player.mother = mother
 

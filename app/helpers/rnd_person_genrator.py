@@ -22,8 +22,8 @@ def _get_rnd_female_compound_name(lang):
 def _get_rnd_last_name(lang):
     return random.choice(get_last_names(lang))
 
-def rnd_person_genrator(lang="ES", age=None, sex="", isParent=False):
-    rndPerson = Person(777)
+def rnd_person_genrator(id, lang="ES", age=None, sex="", isParent=False):
+    rndPerson = Person(id)
 
     # 50-50 sex
     if not sex:

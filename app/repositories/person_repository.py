@@ -7,7 +7,7 @@ class PersonRepository:
         if not self.persons:
             return 1
         else:
-            return max(person.id for person in self.persons)
+            return max(person.id for person in self.persons) + 1
     
     def add(self, person):
         self.persons.append(person)

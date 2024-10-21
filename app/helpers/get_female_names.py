@@ -1,4 +1,4 @@
-# app/helpers/get_male_names.py
+# app/helpers/get_female_names.py
 import json
 
 def get_female_names(lang="ES"):

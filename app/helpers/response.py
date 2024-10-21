@@ -1,4 +1,4 @@
-# app/helpers/response_helper.py
+# app/helpers/response.py
 from flask import jsonify
 
 def create_response(status, data, code):

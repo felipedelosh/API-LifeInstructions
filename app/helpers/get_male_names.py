@@ -7,5 +7,5 @@ def get_male_names(lang="ES"):
             names = json.load(file)
         return names['male_names']
     except Exception as e:
-        print(f"Error al cargar nombres en {lang}: {str(e)}")
-        return []
+        #print(f"Error al cargar nombres en {lang}: {str(e)}")
+        return ["NN"]

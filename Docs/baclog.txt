@@ -8,7 +8,9 @@
     "code": 200 | 400 | 401 | 404 | 500
 }
 
-2 -> Todos los objetos van a tener el siguiente método para el Json:
+2 - Encontrar la forma de que todos los objetos cumplan lo siguiente:
+
+Todos los objetos van a tener el siguiente método para el Json:
 
     def get_json(self):
         return self.__dict__
@@ -24,4 +26,3 @@
 https://es.wikipedia.org/wiki/Anexo:Episodios_de_1000_maneras_de_morir
 
 5 -> End Point Para generar personas al Azar.
-

@@ -1,4 +1,5 @@
 GET http://localhost:5000/health
 
+GET http://localhost:5000/get_random_person 
 
 POST http://localhost:5000/register_player

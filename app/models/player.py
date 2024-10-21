@@ -1,14 +1,10 @@
 # app/models/player.py
-class Player:
+from .person import Person
+
+class Player(Person):
     def __init__(self, id):
-        self.id = id
-        self.firt_name = ""
-        self.middle_name = ""
-        self.last_name = ""
-        self.second_last_name = ""
-        self.sex = ""
-        self.age = 0
-        self.location = ""
+        super().__init__(id)
+        # Other Attribs
 
     def get_json(self):
         return self.__dict__

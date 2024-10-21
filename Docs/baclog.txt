@@ -23,3 +23,5 @@
 4 -> Hay que incluir las 1000 maneras de morir... sacar de la wiki con selenium:
 https://es.wikipedia.org/wiki/Anexo:Episodios_de_1000_maneras_de_morir
 
+5 -> End Point Para generar personas al Azar
+

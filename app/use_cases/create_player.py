@@ -1,20 +1,18 @@
 # app/use_cases/create_player.py
-from app.services.player_service import PlayerService
-import random
+from app.services.person_service import PersonService
+from app.helpers.person_to_player_mapper import map_person_to_player
+from app.helpers.rnd_person_genrator import rnd_person_genrator
 
 class CreatePlayer:
-    def __init__(self, player_service: PlayerService):
-        self.player_service = player_service
+    def __init__(self, person_service: PersonService):
+        self.person_service = person_service
 
-    def rnd_sex():
-        _sex = ['MALE', 'FEMALE']
-        return _sex[random.randint(0, 1)]
-    
-    def generate_mother():
-        pass
-
-    def generate_fatther():
-        pass
-    
     def execute(self, lang):
-        return self.player_service.register_player()
+        father = rnd_person_genrator(sex="MALE", isParent=True).id
+        mother = rnd_person_genrator(sex="FEMALE", isParent=True).id
+
+        player = map_person_to_player(rnd_person_genrator(age=0))
+        player.father = father
+        player.mother = mother
+
+        return self.person_service.register_person(player)

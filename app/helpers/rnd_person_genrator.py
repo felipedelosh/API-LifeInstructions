@@ -22,11 +22,11 @@ def _get_rnd_female_compound_name(lang):
 def _get_rnd_last_name(lang):
     return random.choice(get_last_names(lang))
 
-def rnd_person_genrator(lang="ES", sex="", isParent=False):
+def rnd_person_genrator(lang="ES", age=None, sex="", isParent=False):
     rndPerson = Person(777)
 
     # 50-50 sex
-    if sex == "":
+    if not sex:
         _isMale = True if random.randint(0, 1) == 1 else False
         if _isMale:
             rndPerson.sex = "MALE"
@@ -63,16 +63,19 @@ def rnd_person_genrator(lang="ES", sex="", isParent=False):
         rndPerson.last_name = _get_rnd_last_name(lang)
         rndPerson.second_last_name = _get_rnd_last_name(lang)
 
-    # Age 
-    if isParent:
-        if rndPerson.sex == "MALE":
-            rndPerson.age = random.randint(14, 65)
+    # Age
+    if age is None:
+        if isParent:
+            if rndPerson.sex == "MALE":
+                rndPerson.age = random.randint(14, 65)
+            else:
+                rndPerson.age = random.randint(9, 45)
         else:
-            rndPerson.age = random.randint(9, 45)
+            if rndPerson.sex == "MALE":
+                rndPerson.age = random.randint(0, 80)
+            else:
+                rndPerson.age = random.randint(0, 90)
     else:
-        if rndPerson.sex == "MALE":
-            rndPerson.age = random.randint(0, 80)
-        else:
-            rndPerson.age = random.randint(0, 90)
+        rndPerson.age = age
 
     return rndPerson

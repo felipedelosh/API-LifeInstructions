@@ -4,7 +4,8 @@ from .person import Person
 class Player(Person):
     def __init__(self, id):
         super().__init__(id)
-        # Other Attribs
+        self.father = None
+        self.mother = None
 
     def get_json(self):
         return self.__dict__

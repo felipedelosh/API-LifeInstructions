@@ -1,13 +1,13 @@
 # app/controllers/player_controller.py
 # from flask import request
 from app.use_cases.create_player import CreatePlayer
-from app.services.player_service import PlayerService
-from app.repositories.player_repository import PlayerRepository
+from app.services.person_service import PersonService
+from app.repositories.person_repository import PersonRepository
 from app.helpers.response import create_response
 
 # Inyections
-repository = PlayerRepository()
-service = PlayerService(repository)
+repository = PersonRepository()
+service = PersonService(repository)
 use_case = CreatePlayer(service)
 
 def register_player():

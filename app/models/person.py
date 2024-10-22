@@ -9,6 +9,7 @@ class Person:
         self._sex = ""
         self._age = 0
         self._location = ""
+        self._plausible_death = ""
 
     @property
     def id(self):
@@ -69,6 +70,14 @@ class Person:
     @location.setter
     def location(self, value):
         self._location = value
+
+    @property
+    def plausible_death(self):
+        return self._plausible_death
+
+    @location.setter
+    def plausible_death(self, value):
+        self._plausible_death = value
 
     def get_json(self):
         return self.__dict__

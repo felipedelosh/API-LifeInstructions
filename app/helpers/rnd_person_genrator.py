@@ -5,6 +5,7 @@ from app.helpers.get_male_compound_names import get_male_compound_names
 from app.helpers.get_female_names import get_female_names
 from app.helpers.get_female_compound_names import get_female_compound_names
 from app.helpers.get_last_names import get_last_names
+from app.helpers.get_plausible_death import get_plausible_death
 import random
 
 def _get_rnd_male_single_name(lang):
@@ -21,6 +22,9 @@ def _get_rnd_female_compound_name(lang):
 
 def _get_rnd_last_name(lang):
     return random.choice(get_last_names(lang))
+
+def _get_rnd_plausible_death(lang):
+    return random.choice(get_plausible_death(lang))
 
 def rnd_person_genrator(id, lang="ES", age=None, sex="", isParent=False):
     rndPerson = Person(id)
@@ -77,5 +81,9 @@ def rnd_person_genrator(id, lang="ES", age=None, sex="", isParent=False):
                 rndPerson.age = random.randint(0, 90)
     else:
         rndPerson.age = age
+
+    
+    # Plausible Death
+    rndPerson.plausible_death = _get_rnd_plausible_death(lang)
 
     return rndPerson

@@ -10,6 +10,9 @@ class Person:
         self._age = 0
         self._location = ""
         self._plausible_death = ""
+        # Refactorizar en un objeto que se llame statitics
+        self._hunger = 0 # [0: hungy - 100: full]
+        self._energy = 0 # [0: tired - 100: energetic]
 
     @property
     def id(self):

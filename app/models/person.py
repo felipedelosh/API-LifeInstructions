@@ -12,8 +12,7 @@ class Person:
         self._age = 0
         self._location = ""
         self._plausible_death = ""
-        self._statistics = "LOKO"
-        #self.statistics = Statistics()
+        self.statistics = Statistics()
 
     @property
     def id(self):

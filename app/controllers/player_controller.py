@@ -14,6 +14,7 @@ def register_player():
     try:
         # data = request.get_json()
         player = use_case.execute("ES")
+        print(player.get_json())
         return create_response(True, player.get_json(), 200)
     except:
         return create_response(False, "", 500)

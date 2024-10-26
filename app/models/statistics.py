@@ -21,4 +21,6 @@ class Statistics:
         return self.__dict__
 
     def __repr__(self):
-        return str(self.get_json())
+        return (f"Energy: {self.energy}, Hunger: {self.hunger}, Intelligence: {self.intelligence}, "
+                f"Strength: {self.strength}, Mental Health: {self.mental_health}, Physical Health: {self.physical_health}, "
+                f"Social Skills: {self.social_skills}, Job Performance: {self.job_performance}")

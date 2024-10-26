@@ -1,13 +1,13 @@
 {
   "life_stages": {
-        "infancy": { "lower_limit": 0, "upper_limit": 2 },
-        "early_childhood": { "lower_limit": 3, "upper_limit": 5 },
-        "childhood": { "lower_limit": 6, "upper_limit": 12 },
-        "adolescence": { "lower_limit": 13, "upper_limit": 19 },
-        "youth": { "lower_limit": 20, "upper_limit": 35 },
-        "early_adulthood": { "lower_limit": 36, "upper_limit": 45 },
-        "mid_adulthood": { "lower_limit": 46, "upper_limit": 60 },
-        "late_adulthood": { "lower_limit": 61, "upper_limit": 75 },
-        "old_age": { "lower_limit": 76, "upper_limit": 120 }
+        "infancy": { "name": "infancia ","lower_limit": 0, "upper_limit": 2 },
+        "early_childhood": { "name": "primera infancia","lower_limit": 3, "upper_limit": 5 },
+        "childhood": { "name": "niñez","lower_limit": 6, "upper_limit": 12 },
+        "adolescence": { "name": "adolescencia","lower_limit": 13, "upper_limit": 19 },
+        "youth": { "name": "juventud","lower_limit": 20, "upper_limit": 35 },
+        "early_adulthood": { "name": "adultez temprana","lower_limit": 36, "upper_limit": 45 },
+        "mid_adulthood": { "name": "adultez media","lower_limit": 46, "upper_limit": 60 },
+        "late_adulthood": { "name": "adultez avanzada","lower_limit": 61, "upper_limit": 75 },
+        "old_age": { "name": "vejez","lower_limit": 76, "upper_limit": 120 }
   }
 }

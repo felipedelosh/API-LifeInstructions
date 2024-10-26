@@ -17,7 +17,8 @@ class Statistics:
         else:
             raise ValueError(f"Statistic '{stat_name}' does not exist.")
 
+    def get_json(self):
+        return self.__dict__
+
     def __repr__(self):
-        return (f"Energy: {self.energy}, Hunger: {self.hunger}, Intelligence: {self.intelligence}, "
-                f"Strength: {self.strength}, Mental Health: {self.mental_health}, Physical Health: {self.physical_health}, "
-                f"Social Skills: {self.social_skills}, Job Performance: {self.job_performance}")
+        return str(self.get_json())

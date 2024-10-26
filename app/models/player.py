@@ -1,5 +1,5 @@
 # app/models/player.py
-from .person import Person
+from app.models.person import Person
 
 class Player(Person):
     def __init__(self, id):

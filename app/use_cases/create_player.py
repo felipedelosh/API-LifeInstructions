@@ -20,7 +20,7 @@ class CreatePlayer:
 
         _newPId = self.person_service.generate_new_id()
         player = map_person_to_player(rnd_person_genrator(_newPId, age=0))
-        player.father = father if not _isSingleMother else None
-        player.mother = mother
+        player._father = father if not _isSingleMother else None
+        player._mother = mother
 
         return self.person_service.register_person(player)

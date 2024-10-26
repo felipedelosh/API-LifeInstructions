@@ -4,8 +4,24 @@ from .person import Person
 class Player(Person):
     def __init__(self, id):
         super().__init__(id)
-        self.father = None
-        self.mother = None
+        self._father = None
+        self._mother = None
+
+    @property
+    def father(self):
+        return self._father
+
+    @father.setter
+    def father(self, value):
+        self._father = value
+
+    @property
+    def mother(self):
+        return self._mother
+
+    @mother.setter
+    def mother(self, value):
+        self._mother = value
 
     def get_json(self):
         return self.__dict__

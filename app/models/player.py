@@ -24,7 +24,9 @@ class Player(Person):
         self._mother = value
 
     def get_json(self):
-        return self.__dict__
+        json_data = {**self.__dict__}
+        json_data['statistics'] = self.statistics.get_json()
+        return json_data
 
     def __repr__(self):
         attributes = ', '.join(f'{key}={value}' for key, value in self.__dict__.items())

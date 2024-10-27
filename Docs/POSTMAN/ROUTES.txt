@@ -3,3 +3,10 @@ GET http://localhost:5000/health
 GET http://localhost:5000/get_random_person 
 
 POST http://localhost:5000/register_player
+
+POST http://localhost:5000/take_option_activity
+
+{
+    "player_id": #,
+    "actions": ["action1", "action2", ..."actionN"]
+}

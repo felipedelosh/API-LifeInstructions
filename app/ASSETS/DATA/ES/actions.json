@@ -1,19 +1,23 @@
 {
     "actions": {
-        "walk": {
-            "time": 20,
-            "energy": -10,
-            "hunger": -5
-        },
-        "eat": {
-            "time": 30,
-            "hunger": 50,
-            "energy": 10
-        },
-        "sleep": {
-            "time": 480,
-            "energy": 100,
-            "hunger": -20
-        }
+      "walk": {
+        "time": 20,
+        "energy": -10,
+        "hunger": -5,
+        "physical_health": 5
+      },
+      "eat": {
+        "time": 30,
+        "energy": 10,
+        "hunger": 50,
+        "physical_health": 5
+      },
+      "sleep": {
+        "time": 480,
+        "energy": 100,
+        "hunger": -20,
+        "mental_health": 20
+      }
     }
-}
+  }
+  

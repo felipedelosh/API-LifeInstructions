@@ -78,7 +78,7 @@ class Person:
     def plausible_death(self):
         return self._plausible_death
 
-    @location.setter
+    @plausible_death.setter
     def plausible_death(self, value):
         self._plausible_death = value
 

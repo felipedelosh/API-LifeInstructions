@@ -11,4 +11,5 @@ def map_person_to_player(person: Person) -> Player:
     player.sex = person.sex
     player.age = person.age
     player.location = person.location
+    player.plausible_death = person.plausible_death
     return player

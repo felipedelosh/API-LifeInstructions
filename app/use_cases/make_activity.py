@@ -6,10 +6,11 @@ time_manager = TimeManager()
 
 
 class MakeActivity:
-    def execute(self, actions):
+    def execute(self, player, actions):
         life_activities = get_activities()
 
         if actions not in life_activities.keys():
             return f"The action {actions} not avaiable"
 
-        return time_manager.make_activities(life_activities, actions)
+        return time_manager.make_activities(player, life_activities, actions)
+    

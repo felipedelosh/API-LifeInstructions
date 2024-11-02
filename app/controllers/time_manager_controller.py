@@ -20,7 +20,7 @@ def takeOptionActivity():
         if not isinstance(actions, str) or len(actions) == 0:
             return create_response(False, "'actions' must be a non-empty string", 400)
 
-        make_actions = use_case.execute(actions)
+        make_actions = use_case.execute(player, actions)
         return create_response(True, make_actions, 200)
     except:
         return create_response(False, "", 500)

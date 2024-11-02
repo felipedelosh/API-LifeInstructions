@@ -10,7 +10,7 @@ class MakeActivity:
         life_activities = get_activities()
 
         if actions not in life_activities.keys():
-            return f"The action {actions} not avaiable"
+            return f"The action '{actions}' not avaiable"
 
         return time_manager.make_activities(player, life_activities, actions)
     

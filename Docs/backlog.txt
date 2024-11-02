@@ -42,3 +42,5 @@ Autoestima.
 6 -> Generar un patrón singleton para todas las intancias de repository y service
 
 7 -> Implementar un sistema de LOGs
+
+8 -> Crear una nueva capa que se llame mappers... para que sea un puente entre el dominio y la base de datos.

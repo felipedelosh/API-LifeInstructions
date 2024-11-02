@@ -10,3 +10,7 @@ POST http://localhost:5000/take_option_activity
     "player_id": #,
     "actions": ["action1", "action2", ..."actionN"]
 }
+
+
+GET http://localhost:5000/get_all_persons
+

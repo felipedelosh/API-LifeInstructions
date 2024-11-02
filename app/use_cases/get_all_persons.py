@@ -10,6 +10,7 @@ class GetAllPersons:
         data = self.person_service.get_all()
 
         if data:
+            _persons = []
             for i in data:
                 print(i)
 

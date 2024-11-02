@@ -72,3 +72,6 @@ dmypy.json
 
 # Documentation
 docs/_build/
+
+# Databases
+DB/lifeInstructions.db

@@ -1,8 +1,8 @@
 # app/services/person_service.py
-from app.repositories.person_repository import PersonRepository
+from app.repositories.person.iperson_repository import IPersonRepository
 
 class PersonService:
-    def __init__(self, repository: PersonRepository):
+    def __init__(self, repository: IPersonRepository):
         self.repository = repository
 
     def generate_new_id(self):
@@ -11,3 +11,6 @@ class PersonService:
     def register_person(self, person):
         self.repository.add(person)
         return person
+
+    def get_all(self):
+        return self.repository.get_all()

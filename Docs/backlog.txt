@@ -40,3 +40,5 @@ Autoestima.
 5 -> Generar un repositorio temporal ... puede ser SQLite3
 
 6 -> Generar un patrón singleton para todas las intancias de repository y service
+
+7 -> Implementar un sistema de LOGs

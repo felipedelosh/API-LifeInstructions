@@ -13,12 +13,7 @@ use_case = CreatePlayer(service)
 
 def register_player():
     try:
-        # data = request.get_json()
-        try:
-            player = use_case.execute("ES")
-        except:
-            print("Hay un error")
-        
+        player = use_case.execute("ES")
         return create_response(True, player.get_json(), 200)
     except:
         return create_response(False, "", 500)

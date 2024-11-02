@@ -1,8 +1,7 @@
 # app/models/time_manager.py
 class TimeManager:
-    def make_activities(self, life_activities, activities):
+    def make_activities(self, life_activities, action):
         print(life_activities)
         print("==========================")
-        for i in activities:
-            print(i)
+        print(action)
         return "Aka estoyyyyy"

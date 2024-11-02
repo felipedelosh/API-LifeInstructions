@@ -17,8 +17,8 @@ def takeOptionActivity():
             return create_response(False, "'player_id' must be a non-empty or invalid user", 400)
 
         actions = data.get("actions")
-        if not isinstance(actions, list) or len(actions) == 0:
-            return create_response(False, "'actions' must be a non-empty array", 400)
+        if not isinstance(actions, str) or len(actions) == 0:
+            return create_response(False, "'actions' must be a non-empty string", 400)
 
         make_actions = use_case.execute(actions)
         return create_response(True, make_actions, 200)

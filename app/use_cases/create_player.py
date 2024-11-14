@@ -15,14 +15,19 @@ class CreatePlayer:
             print("Hay padre")
             _newPId = self.person_service.generate_new_id()
             print("ID del padre")
-            father = rnd_person_genrator(_newPId, sex="MALE", isParent=True).id
+            father = rnd_person_genrator(_newPId, sex="MALE", isParent=True)
+            _father_id = father.id
+            self.person_service.register_person(father)
+
         _newPId = self.person_service.generate_new_id()
-        mother = rnd_person_genrator(_newPId, sex="FEMALE", isParent=True).id
+        mother = rnd_person_genrator(_newPId, sex="FEMALE", isParent=True)
+        _mother_id = mother.id
+        self.person_service.register_person(mother)
 
 
         _newPId = self.person_service.generate_new_id()
         player = map_person_to_player(rnd_person_genrator(_newPId, age=0))
-        player._father = father if not _isSingleMother else None
-        player._mother = mother
+        player._father = _father_id if not _isSingleMother else None
+        player._mother = _mother_id
 
         return self.person_service.register_person(player)

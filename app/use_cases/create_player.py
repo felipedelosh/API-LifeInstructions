@@ -11,23 +11,20 @@ class CreatePlayer:
     def execute(self, lang):
         # the woman in world hav 15% of posibilities to BE single mother
         _isSingleMother = True if random.randint(0, 100) <= 15 else False
+
         if not _isSingleMother:
-            print("Hay padre")
             _newPId = self.person_service.generate_new_id()
-            print("ID del padre")
             father = rnd_person_genrator(_newPId, sex="MALE", isParent=True)
-            _father_id = father.id
             self.person_service.register_person(father)
 
         _newPId = self.person_service.generate_new_id()
         mother = rnd_person_genrator(_newPId, sex="FEMALE", isParent=True)
-        _mother_id = mother.id
         self.person_service.register_person(mother)
-
 
         _newPId = self.person_service.generate_new_id()
         player = map_person_to_player(rnd_person_genrator(_newPId, age=0))
-        player._father = _father_id if not _isSingleMother else None
-        player._mother = _mother_id
+        
+        player._father = father.id if not _isSingleMother else None
+        player._mother =  mother.id
 
         return self.person_service.register_person(player)

@@ -31,5 +31,5 @@ class CreatePlayer:
 
         # register player
         self.player_service.add(player)
-        # Register likea a person and return
+        # Register like a person and return
         return self.person_service.register_person(player)

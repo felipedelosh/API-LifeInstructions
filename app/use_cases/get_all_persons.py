@@ -8,8 +8,4 @@ class GetAllPersons:
 
     def execute(self):
         data = self.person_service.get_all()
-
-        print("Akaaaa")
-
-
         return data

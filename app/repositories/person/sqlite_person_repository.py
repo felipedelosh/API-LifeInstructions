@@ -19,12 +19,13 @@ class SQLitePersonRepository(IPersonRepository):
                         second_last_name TEXT,
                         sex TEXT,
                         age INTEGER,
-                        location TEXT
+                        location TEXT,
+                        plausible_death TEXT
                     )
                 ''')
-            #print("Tabla 'persons' creada o existente.")
+            # print("Tabla 'persons' creada o existente.")
         except sqlite3.Error as e:
-            #print(f"Error al crear la tabla: {e}")
+            # print(f"Error al crear la tabla: {e}")
             pass
 
     def get_next_id(self):
@@ -43,14 +44,15 @@ class SQLitePersonRepository(IPersonRepository):
     def add(self, person):
         try:
             with self.conn:
+                #print(person)
                 self.conn.execute('''
-                    INSERT INTO persons (id, first_name, middle_name, last_name, second_last_name, sex, age, location)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (person.id, person.first_name, person.middle_name, person.last_name, person.second_last_name, person.sex, person.age, person.location))
-            #print(f"Persona {person.first_name} añadida.")
+                    INSERT INTO persons (id, first_name, middle_name, last_name, second_last_name, sex, age, location, plausible_death)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (person.id, person.first_name, person.middle_name, person.last_name, person.second_last_name, person.sex, person.age, person.location, person.plausible_death))
         except sqlite3.Error as e:
-            #print(f"Error al añadir la persona: {e}")
+            # print(f"Error al añadir la persona: {e}")
             pass
+
 
     def get_all(self):
         try:

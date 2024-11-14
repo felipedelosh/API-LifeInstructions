@@ -25,6 +25,13 @@ class PersonService:
 
     def _convert_to_person(self, row):
         person = Person(row[0])
+        person.first_name = row[1]
+        person.middle_name = row[2]
+        person.last_name = row[3]
+        person.second_last_name = row[4]
+        person.sex = row[5]
+        person.age = row[6]
+        person.location = row[7]
+        person.plausible_death = row[8]
 
         return person
-

@@ -3,7 +3,15 @@ import sqlite3
 from app.repositories.player.iplayer_repository import IPlayerRepository
 
 class SQLitePlayerRepository(IPlayerRepository):
-    def __init__(self, db_path):
+    _instance = None
+
+    def __new__(cls, db_path):
+        if cls._instance is None:
+            cls._instance = super(SQLitePlayerRepository, cls).__new__(cls)
+            cls._instance._initialize(db_path)
+        return cls._instance
+
+    def _initialize(self, db_path):
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.create_table()
 

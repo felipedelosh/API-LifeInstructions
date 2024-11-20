@@ -3,7 +3,7 @@
 from app.use_cases.create_player import CreatePlayer
 from app.services.person_service import PersonService
 from app.services.player_service import PlayerService
-from app.repositories.person_repository import PersonRepository # Serach if use to delette
+from app.repositories.person_repository import PersonRepository # Search if use  >> Need delete
 from app.repositories.person.sqlite_person_repository import SQLitePersonRepository
 from app.repositories.player.sqlite_player_repository import SQLitePlayerRepository
 from app.helpers.response import create_response

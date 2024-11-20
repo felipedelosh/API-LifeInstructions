@@ -49,3 +49,33 @@ class SQLitePlayerRepository(IPlayerRepository):
         except sqlite3.Error as e:
             # print(f"Error al obtener todos los jugadores: {e}")
             return []
+        
+    def get_player_by_id(self, player_id):
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute('''
+                SELECT p.id, p.first_name, p.middle_name, p.last_name, p.second_last_name, p.sex, p.age, p.location, p.plausible_death,
+                       pl.father, pl.mother
+                FROM persons p
+                JOIN players pl ON p.id = pl.id
+                WHERE pl.id = ?
+            ''', (player_id,))
+            result = cursor.fetchone()
+            if result:
+                return {
+                    "id": result[0],
+                    "first_name": result[1],
+                    "middle_name": result[2],
+                    "last_name": result[3],
+                    "second_last_name": result[4],
+                    "sex": result[5],
+                    "age": result[6],
+                    "location": result[7],
+                    "plausible_death": result[8],
+                    "father": result[9],
+                    "mother": result[10]
+                }
+            else:
+                return None
+        except sqlite3.Error as e:
+            return None

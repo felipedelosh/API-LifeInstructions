@@ -7,5 +7,9 @@ class IPlayerRepository(ABC):
         pass
 
     @abstractmethod
+    def get_player_by_id(self, player_id):
+        pass
+
+    @abstractmethod
     def get_all(self):
         pass

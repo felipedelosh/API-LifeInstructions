@@ -34,6 +34,7 @@ class SQLitePersonRepository(IPersonRepository):
                 self.conn.execute('''
                     CREATE TABLE IF NOT EXISTS statistics (
                         person_id INTEGER PRIMARY KEY,
+                        time INTEGER,
                         energy INTEGER,
                         hunger INTEGER,
                         intelligence INTEGER,
@@ -71,10 +72,11 @@ class SQLitePersonRepository(IPersonRepository):
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (person.id, person.first_name, person.middle_name, person.last_name, person.second_last_name, person.sex, person.age, person.location, person.plausible_death))
                 self.conn.execute('''
-                    INSERT INTO statistics (person_id, energy, hunger, intelligence, strength, mental_health, physical_health, social_skills, job_performance)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    INSERT INTO statistics (person_id, time, energy, hunger, intelligence, strength, mental_health, physical_health, social_skills, job_performance)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (
                     person.id,
+                    person.statistics.time,
                     person.statistics.energy,
                     person.statistics.hunger,
                     person.statistics.intelligence,

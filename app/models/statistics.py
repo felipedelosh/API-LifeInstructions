@@ -3,6 +3,7 @@ import random
 
 class Statistics:
     def __init__(self):
+        self.time = 0 # the time to peerson live in minuts
         self.energy = random.randint(50, 100)  # 100 is full, 0 is exhausted
         self.hunger = random.randint(20, 100)  # 100 is full, 0 is starving
         self.intelligence = random.randint(20, 100)
@@ -23,6 +24,6 @@ class Statistics:
         return self.__dict__
 
     def __repr__(self):
-        return (f"Energy: {self.energy}, Hunger: {self.hunger}, Intelligence: {self.intelligence}, "
+        return (f"Time: {self.time}, Energy: {self.energy}, Hunger: {self.hunger}, Intelligence: {self.intelligence}, "
                 f"Strength: {self.strength}, Mental Health: {self.mental_health}, Physical Health: {self.physical_health}, "
                 f"Social Skills: {self.social_skills}, Job Performance: {self.job_performance}")

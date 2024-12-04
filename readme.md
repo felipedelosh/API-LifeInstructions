@@ -3,13 +3,13 @@
 <h4>LifeInstructions API</h4>
 
 ![Banner](Docs/banner.png)
-:construction: Status of project :construction:
+:construction: IN CONSTRUCTION :construction:
 <br><br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This it´s my API for my first book, simulates a simple life, be you want to be. Smile, Hate, Love and death. you hav freewill.
 
 ## :hammer:Funtions:
 
-- `Function 1`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
+- `Function 1`: Player register<br>
 - `Function 2`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
 - `Function 3`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
 - `Function 3a`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
@@ -24,6 +24,40 @@ pip install -r requirements.txt
 
 python run.py
 
+## API Response format
+
+```
+{
+    "status": boolean,
+    "data": [],
+    "code": number
+}
+```
+
+## Endpoints
+
+GET http://localhost:5000/health
+
+POST http://localhost:5000/register_player
+
+```
+{
+    "name": string,
+    "age": number
+}
+```
+
+GET http://localhost:5000/get_player/<id>
+
+POST http://localhost:5000/take_option_activity
+
+```
+{
+    "player_id": #,
+    "actions": "action"
+}
+```
+
 ## :hammer_and_wrench:Tech.
 
 - Python.
@@ -31,7 +65,7 @@ python run.py
 
 ## :warning:Warning.
 
-- limitations.
+- PROJECT 1% complete
 
 ## Autor
 

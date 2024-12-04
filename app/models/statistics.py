@@ -1,14 +1,16 @@
 # app/models/statistics.py
+import random
+
 class Statistics:
     def __init__(self):
-        self.energy = 100  # 100 is full, 0 is exhausted
-        self.hunger = 100  # 100 is full, 0 is starving
-        self.intelligence = 50
-        self.strength = 50
-        self.mental_health = 70  # 100 is optimal, 0 is critical
-        self.physical_health = 70  # 100 is optimal, 0 is critical
-        self.social_skills = 50
-        self.job_performance = 50
+        self.energy = random.randint(50, 100)  # 100 is full, 0 is exhausted
+        self.hunger = random.randint(20, 100)  # 100 is full, 0 is starving
+        self.intelligence = random.randint(20, 100)
+        self.strength = random.randint(0, 100)
+        self.mental_health = random.randint(0, 100)  # 100 is optimal, 0 is critical
+        self.physical_health = random.randint(0, 100)  # 100 is optimal, 0 is critical
+        self.social_skills = random.randint(0, 100)
+        self.job_performance = random.randint(0, 100)
 
     def update_stat(self, stat_name, value):
         if hasattr(self, stat_name):

@@ -31,6 +31,20 @@ class SQLitePersonRepository(IPersonRepository):
                         plausible_death TEXT
                     )
                 ''')
+                self.conn.execute('''
+                    CREATE TABLE IF NOT EXISTS statistics (
+                        person_id INTEGER PRIMARY KEY,
+                        energy INTEGER,
+                        hunger INTEGER,
+                        intelligence INTEGER,
+                        strength INTEGER,
+                        mental_health INTEGER,
+                        physical_health INTEGER,
+                        social_skills INTEGER,
+                        job_performance INTEGER,
+                        FOREIGN KEY(person_id) REFERENCES persons(id)
+                    )
+                ''')
             # print("Tabla 'persons' creada o existente.")
         except sqlite3.Error as e:
             # print(f"Error al crear la tabla: {e}")
@@ -52,11 +66,24 @@ class SQLitePersonRepository(IPersonRepository):
     def add(self, person):
         try:
             with self.conn:
-                #print(person)
                 self.conn.execute('''
                     INSERT INTO persons (id, first_name, middle_name, last_name, second_last_name, sex, age, location, plausible_death)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (person.id, person.first_name, person.middle_name, person.last_name, person.second_last_name, person.sex, person.age, person.location, person.plausible_death))
+                self.conn.execute('''
+                    INSERT INTO statistics (person_id, energy, hunger, intelligence, strength, mental_health, physical_health, social_skills, job_performance)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    person.id,
+                    person.statistics.energy,
+                    person.statistics.hunger,
+                    person.statistics.intelligence,
+                    person.statistics.strength,
+                    person.statistics.mental_health,
+                    person.statistics.physical_health,
+                    person.statistics.social_skills,
+                    person.statistics.job_performance
+                ))
         except sqlite3.Error as e:
             # print(f"Error al añadir la persona: {e}")
             pass

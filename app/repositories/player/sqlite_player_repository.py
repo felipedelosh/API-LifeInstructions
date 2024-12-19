@@ -108,7 +108,6 @@ class SQLitePlayerRepository(IPlayerRepository):
 
     def update_player_statistics(self, player):
         try:
-            print(">>>>Entra<<<<")
             cursor = self.conn.cursor()
             sql = '''
             UPDATE statistics

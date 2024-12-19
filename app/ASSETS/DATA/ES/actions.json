@@ -4,19 +4,28 @@
         "time": 20,
         "energy": -10,
         "hunger": -5,
+        "intelligence": 2,
+        "strength": 2,
+        "mental_health": 2,
         "physical_health": 5
       },
       "eat": {
         "time": 30,
         "energy": 10,
         "hunger": 50,
-        "physical_health": 5
+        "intelligence": 0,
+        "strength": 0,
+        "mental_health": 0,
+        "physical_health": 2
       },
       "sleep": {
         "time": 480,
         "energy": 100,
         "hunger": -20,
-        "mental_health": 20
+        "intelligence": 3,
+        "strength": 1,
+        "mental_health": 2,
+        "physical_health": 0
       }
     }
   }

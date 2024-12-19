@@ -11,7 +11,7 @@ player_repository = SQLitePlayerRepository('DB/lifeInstructions.db')
 player_service = PlayerService(player_repository)
 use_case_get_player = GetPlayer(player_service)
 # Make action
-use_case_make_activity = MakeActivity()
+use_case_make_activity = MakeActivity(player_service)
 
 
 def takeOptionActivity():

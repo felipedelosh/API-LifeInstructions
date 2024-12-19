@@ -15,6 +15,9 @@ class PlayerService:
 
         return []
     
+    def update_player_statistics(self, player):
+        self.repository.update_player_statistics(player)
+    
     def get_player_by_id(self, player_id):
         data = self.repository.get_player_by_id(player_id)
 

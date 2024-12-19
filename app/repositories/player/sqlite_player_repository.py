@@ -104,3 +104,41 @@ class SQLitePlayerRepository(IPlayerRepository):
                 return None
         except sqlite3.Error as e:
             return None
+        
+
+    def update_player_statistics(self, player):
+        try:
+            print(">>>>Entra<<<<")
+            cursor = self.conn.cursor()
+            sql = '''
+            UPDATE statistics
+            SET 
+                time = ?,
+                energy = ?,
+                hunger = ?,
+                intelligence = ?,
+                strength = ?,
+                mental_health = ?,
+                physical_health = ?,
+                social_skills = ?,
+                job_performance = ?
+            WHERE person_id = ?
+            '''
+            values = (
+                player.statistics.time,
+                player.statistics.energy,
+                player.statistics.hunger,
+                player.statistics.intelligence,
+                player.statistics.strength,
+                player.statistics.mental_health,
+                player.statistics.physical_health,
+                player.statistics.social_skills,
+                player.statistics.job_performance,
+                player.id
+            )
+            cursor.execute(sql, values)
+            self.conn.commit()
+            # print("Estadísticas del jugador actualizadas exitosamente.")
+        except sqlite3.Error as e:
+            # print(f"Error al actualizar las estadísticas del jugador: {e}")
+            pass

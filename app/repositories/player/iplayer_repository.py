@@ -13,3 +13,7 @@ class IPlayerRepository(ABC):
     @abstractmethod
     def get_all(self):
         pass
+
+    @abstractmethod
+    def update_player_statistics(self, player):
+        pass

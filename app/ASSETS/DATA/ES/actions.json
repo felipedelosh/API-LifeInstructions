@@ -20,7 +20,7 @@
       },
       "sleep": {
         "time": 480,
-        "energy": 100,
+        "energy": 1,
         "hunger": -20,
         "intelligence": 3,
         "strength": 1,

@@ -25,7 +25,7 @@ def takeOptionActivity():
 
         actions = data.get("action")
         if not isinstance(actions, str) or len(actions) == 0:
-            return create_response(False, "'actions' must be a non-empty string", 400)
+            return create_response(False, "'action' must be a non-empty string", 400)
         
         player = use_case_get_player.execute(player_id)
 

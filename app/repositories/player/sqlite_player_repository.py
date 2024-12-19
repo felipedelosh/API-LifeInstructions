@@ -61,7 +61,31 @@ class SQLitePlayerRepository(IPlayerRepository):
                 WHERE pl.id = ?
             ''', (player_id,))
             result = cursor.fetchone()
+            cursor.close()
+
             if result:
+                # Get player statitics
+                cursor = self.conn.cursor()
+                cursor.execute('''
+                SELECT * from statistics WHERE person_id = ?
+                ''', (player_id,))
+                _data_statistics = cursor.fetchone()
+                _statistics = {}
+
+                if _data_statistics:
+                    _statistics = {
+                        "time": _data_statistics[1],
+                        "energy": _data_statistics[2],
+                        "hunger": _data_statistics[3],
+                        "intelligence": _data_statistics[4],
+                        "strength": _data_statistics[5],
+                        "mental_health": _data_statistics[6],
+                        "physical_health": _data_statistics[7],
+                        "social_skills": _data_statistics[8],
+                        "job_performance": _data_statistics[9]
+                    }
+                cursor.close()
+
                 return {
                     "id": result[0],
                     "first_name": result[1],
@@ -73,7 +97,8 @@ class SQLitePlayerRepository(IPlayerRepository):
                     "location": result[7],
                     "plausible_death": result[8],
                     "father": result[9],
-                    "mother": result[10]
+                    "mother": result[10],
+                    "statistics": _statistics
                 }
             else:
                 return None

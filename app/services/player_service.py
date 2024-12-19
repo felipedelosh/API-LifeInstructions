@@ -36,4 +36,14 @@ class PlayerService:
         player.father = row['father']
         player.mother = row['mother']
 
+        player.statistics.time = row['statistics']['time']
+        player.statistics.energy = row['statistics']['energy']
+        player.statistics.hunger = row['statistics']['hunger']
+        player.statistics.intelligence = row['statistics']['intelligence']
+        player.statistics.strength = row['statistics']['strength']
+        player.statistics.mental_health = row['statistics']['mental_health']
+        player.statistics.physical_health = row['statistics']['physical_health']
+        player.statistics.social_skills = row['statistics']['social_skills']
+        player.statistics.job_performance = row['statistics']['job_performance']
+
         return player

@@ -43,6 +43,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Andrés\",\r\n    \"middle_name\": \"Felipe\",\r\n    \"last_name\": \"Hernández\",\r\n    \"second_last_name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:5000/register_player",
 							"protocol": "http",
@@ -76,6 +85,25 @@
 							"port": "5000",
 							"path": [
 								"get_random_person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/get_all_persons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"get_all_persons"
 							]
 						}
 					},

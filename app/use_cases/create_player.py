@@ -1,4 +1,5 @@
 # app/use_cases/create_player.py
+from app.models.person import Person
 from app.services.person_service import PersonService
 from app.services.player_service import PlayerService
 from app.helpers.person_to_player_mapper import map_person_to_player
@@ -10,7 +11,7 @@ class CreatePlayer:
         self.person_service = person_service
         self.player_service = player_service
 
-    def execute(self, lang):
+    def execute(self, lang, user_preferencies=None):
         # the woman in world hav 15% of posibilities to BE single mother
         _isSingleMother = True if random.randint(0, 100) <= 15 else False
 
@@ -24,12 +25,31 @@ class CreatePlayer:
         self.person_service.register_person(mother)
 
         _newPId = self.person_service.generate_new_id()
-        player = map_person_to_player(rnd_person_genrator(_newPId, age=0))
-        
+        if user_preferencies:
+            player = self._fillPersonData(_newPId, user_preferencies)
+        else:
+            player = rnd_person_genrator(_newPId, age=0)
+
+        player = map_person_to_player(player)
         player._father = father.id if not _isSingleMother else None
         player._mother =  mother.id
-
         # register player
         self.player_service.add(player)
         # Register like a person and return
         return self.person_service.register_person(player)
+    
+    def _fillPersonData(self, id, user_preferencies):
+        player = Person(id)
+        _player = player.__dict__
+        for key, value in user_preferencies.items():
+            try:
+                _key = f"_{key}"
+                setattr(player, _key, value)
+            except:
+                # print(f"Err set Player Atr: {_key}:{value}")
+                pass
+
+
+        return player
+
+

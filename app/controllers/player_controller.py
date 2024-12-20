@@ -1,5 +1,5 @@
 # app/controllers/player_controller.py
-# from flask import request
+from flask import request
 from app.use_cases.create_player import CreatePlayer
 from app.use_cases.get_player import GetPlayer
 from app.services.person_service import PersonService
@@ -19,7 +19,8 @@ use_case_get_player = GetPlayer(player_service)
 
 def register_player():
     try:
-        player = use_case_create_player.execute("ES")
+        user_preferencies = request.get_json()
+        player = use_case_create_player.execute("ES", user_preferencies)
         return create_response(True, player.get_json(), 200)
     except:
         return create_response(False, "", 500)

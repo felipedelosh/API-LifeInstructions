@@ -1,4 +1,5 @@
 # app/repositories/person_repository.py
+# DEPRECATED... ONLY ID STORAGE?
 class PersonRepository:
     def __init__(self):
         self.persons = []  # Simulates DB

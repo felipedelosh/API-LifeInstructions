@@ -17,6 +17,10 @@ class MakeActivity:
             return f"The action '{actions}' not avaiable"
 
         new_instance_player = time_manager.make_activities(player, life_activities, actions)
+        
+        if not new_instance_player:
+            return f"Cant not do: '{actions}'."
+
         self.player_service.update_player_statistics(new_instance_player)
 
         return new_instance_player

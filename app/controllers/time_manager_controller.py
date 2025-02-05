@@ -30,6 +30,10 @@ def takeOptionActivity():
         player = use_case_get_player.execute(player_id)
 
         player_make_actions = use_case_make_activity.execute(player, actions)
+
+        if isinstance(player_make_actions, str):
+            return create_response(False, f"{player_make_actions}", 200)
+
         return create_response(True, player_make_actions.get_json(), 200)
     except:
         return create_response(False, "", 500)
